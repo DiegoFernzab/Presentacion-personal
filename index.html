@@ -353,11 +353,92 @@
     color: var(--border);
     margin: 0 2px;
   }
+  /* ── FEATURED: DIRECTOR DE IA ── */
+  .dia-card {
+    background: linear-gradient(135deg, var(--accent-light), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+  }
+  .dia-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 99px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  .dia-card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    line-height: 1.15;
+    color: var(--text);
+  }
+  .dia-tagline {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .dia-desc {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 65ch;
+    margin-top: 14px;
+  }
+  .dia-desc strong { color: var(--text); }
+  .dia-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .dia-charlas {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+  }
+  .dia-charlas h3 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .dia-charlas ul { list-style: none; }
+  .dia-charlas li { margin-bottom: 12px; }
+  .dia-charla-link {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .dia-charla-link:hover { text-decoration: underline; }
+  .dia-charla-nota {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 3px;
+  }
+
   @media (max-width: 640px) {
     .hero-inner { flex-direction: column; gap: 24px; }
     .hero-photo { width: 96px; height: 96px; }
     .proj-grid { grid-template-columns: 1fr; }
     nav ul { gap: 16px; }
+    .dia-card { padding: 22px; }
+    .dia-card h2 { font-size: 23px; }
+    .dia-links .btn { flex: 1 1 auto; justify-content: center; }
   }
 </style>
 </head>
@@ -368,6 +449,7 @@
   <div class="inner">
     <a class="nav-logo" href="#">Diego Zabala</a>
     <ul>
+      <li><a href="#director-ia">Director de IA</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -440,6 +522,42 @@
     <span class="skill-tag">Android (Kotlin)</span>
     <span class="skill-tag">CRISP-DM</span>
     <span class="skill-tag">Git / GitHub</span>
+  </div>
+</section>
+
+<!-- FEATURED: EL DIRECTOR DE IA -->
+<section id="director-ia">
+  <div class="dia-card">
+    <span class="dia-badge">✦ Proyecto destacado · Blog trimestral</span>
+    <h2>El Director de IA</h2>
+    <p class="dia-tagline">La habilidad no es usar IA. Es dirigirla.</p>
+    <p class="dia-desc">
+      Guía gratuita que escribí con dos objetivos: que quien empieza con IA
+      arranque bien desde el día uno, y contarle a mi gente — técnica y no técnica,
+      tanto amigos y familia a quienes podría interesar mi experiencia como ingeniero,
+      como quien hasta ahora empieza a usar la IA. Nació con Claude Fable 5, antes de que el
+      modelo dejara de ser público, para documentar recomendaciones con el mejor
+      modelo disponible. Se actualiza <strong>cada 3 meses</strong> con lo que
+      aprendí, lo que mejoré y lo que le puede ahorrar tiempo a cualquiera.
+    </p>
+    <div class="dia-links">
+      <a class="btn btn-primary" href="https://manual-de-claude-tips-de-fable-5.vercel.app/" target="_blank">Leer la guía →</a>
+      <a class="btn btn-ghost" href="https://manual-de-claude-tips-de-fable-5.vercel.app/sin-codigo.html" target="_blank">No soy ingeniero · empezar aquí</a>
+      <a class="btn btn-ghost" href="https://manual-de-claude-tips-de-fable-5.vercel.app/guia-claude.html" target="_blank">Guía técnica de Claude Code</a>
+    </div>
+    <div class="dia-charlas">
+      <h3>Charlas y conferencias</h3>
+      <ul>
+        <li>
+          <a class="dia-charla-link" href="https://charla-de-ia-en-empresas.vercel.app/" target="_blank">IA en Empresas — Universidad de los Andes</a>
+          <span class="dia-charla-nota">
+            Mis notas y síntesis de la charla sobre empresas agénticas
+            (Rappi, Globant, Nu) — mi punto de partida en la IA empresarial.
+          </span>
+        </li>
+        <!-- Próximas charlas se agregan aquí -->
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -655,26 +773,6 @@
       </div>
       <div class="card-footer">
         <span class="card-meta">Proyecto personal</span>
-        <a class="card-link" href="https://github.com/DiegoFernzab" target="_blank">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <span class="card-name">IA en Empresas — Notas de Conferencia</span>
-        <span class="card-badge badge-blue">Conocimiento</span>
-      </div>
-      <p class="card-desc">
-        Documentación y síntesis personal de una charla sobre el impacto de la inteligencia 
-        artificial en contextos empresariales — casos de uso, tendencias y aprendizajes clave.
-      </p>
-      <div class="card-tags">
-        <span class="tag">IA</span>
-        <span class="tag">Empresas</span>
-        <span class="tag">Notas</span>
-      </div>
-      <div class="card-footer">
-        <span class="card-meta">Conferencia · 2024–2025</span>
         <a class="card-link" href="https://github.com/DiegoFernzab" target="_blank">GitHub →</a>
       </div>
     </div>
